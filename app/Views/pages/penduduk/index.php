@@ -31,6 +31,9 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+                            <div class="float-left">
+                                <a href="/penduduk/add" class="btn btn-success">Add</a>
+                            </div>
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
@@ -38,17 +41,27 @@
                                         <th>Browser</th>
                                         <th>Platform(s)</th>
                                         <th>Engine version</th>
+                                        <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $no = 1; ?>
-                                    <?php foreach($data as $dat) : ?>
-                                    <tr>
-                                        <td><?= $no++; ?></td>
-                                        <td><?= $dat['nama']; ?></td>
-                                        <td><?= $dat['nik']; ?></td>
-                                        <td><?= $dat['alamat']; ?></td>
-                                    </tr>
+                                    <?php foreach ($data as $dat) : ?>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $dat['nama']; ?></td>
+                                            <td><?= $dat['nik']; ?></td>
+                                            <td><?= $dat['alamat']; ?></td>
+                                            <td>
+                                                <a href="/penduduk/edit/<?= $dat['id']; ?>" class="btn btn-info">Edit</a>
+
+                                                <form action="/penduduk/<?= $dat['id']; ?>" method="post" class="d-inline">
+                                                    <?= csrf_field(); ?>
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>

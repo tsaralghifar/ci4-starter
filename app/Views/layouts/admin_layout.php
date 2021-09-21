@@ -240,7 +240,7 @@
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>/template/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="<?= base_url() ?>/template/dist/js/demo.js"></script>
+    <!-- <script src="<?= base_url() ?>/template/dist/js/demo.js"></script> -->
     <!-- DataTables  & Plugins -->
     <script src="<?= base_url() ?>/template/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="<?= base_url() ?>/template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
